@@ -1,0 +1,45 @@
+<canvas id = "ex1"></canvas>
+<script>
+
+    const rand = function(num) {
+        return Math.floor(Math.random() * num) + 1;
+    }
+
+    const canvas = document.getElementById("ex1");
+    const context = canvas.getContext("2d");
+
+    const createBoxes = function(count, canvasWidth, canvasHeight) {
+        // TODO: Implement this function which takes as arguments a count, canvasWidth and canvasHeight and 
+            //returns an array of objects with different x and y locations (this is where you use the rand method I provided above).
+        //All generated boxes need to be inside the canvas (which is why canvasWidth and canvasHeight are given as arguments).
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        context.fillStyle = "red";
+        context.fillRect(0,0, canvas.width, canvas.height);
+        
+        const colorArray = ['blue', 'green', 'orange'];
+
+        const arr = [];
+        for(let i = 0; i < count; i++){   
+            arr[i] = {
+                x: rand(canvas.width - 30),
+                y: rand(canvas.height - 30),
+                width: 30,
+                height: 30,
+                xDelta: 1, // whatever you want
+                yDelta: 1, // whatever you want
+                color: colorArray[rand(3)-1], // where colorArray could be something like ['red', 'green', 'orange'] - 
+                draw: function() {
+                    context.fillStyle = this.color;
+                    context.fillRect(this.x, this.y, this.width, this.height);
+                },
+            //     update: function() {} 
+            }
+            arr[i].draw();
+        }
+    };
+
+    createBoxes(4, 200, 200);
+
+</script>

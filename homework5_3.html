@@ -1,0 +1,58 @@
+<canvas id="ex3"><canvas>
+<script>
+    const canvas = document.getElementById("ex3");
+    const context = canvas.getContext("2d");
+    canvas.width = 300;
+    canvas.height = 300;
+    context.fillStyle = "red";
+    context.fillRect(0,0, canvas.width, canvas.height);
+
+    const leftKey = 37;
+    const upKey = 38;
+    const rightKey = 39;
+    const downKey = 40;
+    document.addEventListener('keydown', function(event) {
+        if(event.keyCode === upKey) {
+            console.log('up key was pressed');
+        }
+    }, false);
+
+    const  goodGuyImg = new Image();
+    goodGuyImg.src = 'https://i5.walmartimages.com/asr/16a951a4-752a-431f-919d-ce12c5c6fb93_1.d05b818485c12d901b6a584c12769b7c.jpeg?odnHeight=30&odnWidth=30&odnBg=ffffff';
+    goodGuyImg.onload = function(){
+        context.drawImage(goodGuyImg, 0, 0);
+    };
+
+   /* const badGuyImg = new Image();
+    badGuyImg.src = '...';
+
+    const gameData = {
+        hero: {
+            x: ...,
+            y: ...,
+            xDelta: ...,
+            yDelta: ...,
+            width: ...,
+            height: ...,
+            image: goodGuyImg,
+            draw: function() { ... },
+            update: function() { ... }
+        },
+        badGuys: [
+            {
+                x: ...,
+                y: ...,
+                xDelta: ...,
+                yDelta: ...,
+                width: ...,
+                height: ...,
+                image: badGuyImg,
+                draw: function() { ... },
+                update: function() { ... }
+            },
+            ... etc ...
+        ]
+    };
+*/
+
+</script>
