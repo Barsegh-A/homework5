@@ -8,14 +8,13 @@
     const canvas = document.getElementById("ex2");
     const context = canvas.getContext("2d");
 
-    const arr = [];
 
     const createBoxes = function(count, canvasWidth, canvasHeight) {
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
 
-        
-        const colorArray = ['blue', 'green', 'orange', 'yellow', 'purple'];
+        const arr = [];
+        const colorArray = ['blue', 'green', 'orange', "yellow", "purple", "black", "grey"];
         const dirArray = [
             [-1,-1],
             [-1,0],
@@ -61,23 +60,23 @@
                     this.color = colorArray[colorIndex];
                 } 
             }
-            //arr[i].draw();
         }
+        return arr;
     };
 
-    createBoxes(4, 200, 200);
+    const boxes = createBoxes(10, 500, 500);
 
     const draw = function(){
         context.fillStyle = "red";
         context.fillRect(0,0, canvas.width, canvas.height);
-        for(let i = 0; i < arr.length; i++){
-            arr[i].draw();
+        for(let i = 0; i < boxes.length; i++){
+            boxes[i].draw();
         }
     };
 
     const update = function(){
-        for(let i = 0; i < arr.length; i++){
-            arr[i].update();
+        for(let i = 0; i < boxes.length; i++){
+            boxes[i].update();
         }
     };
 
