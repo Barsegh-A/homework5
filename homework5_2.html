@@ -14,7 +14,7 @@
         canvas.height = canvasHeight;
 
         const arr = [];
-        const colorArray = ['blue', 'green', 'orange', "yellow", "purple", "black", "grey"];
+        const colorArray = ['blue', 'green', 'orange', "yellow", "purple", "black"];
         const dirArray = [
             [-1,-1],
             [-1,0],
@@ -67,7 +67,7 @@
     const boxes = createBoxes(10, 500, 500);
 
     const draw = function(){
-        context.fillStyle = "red";
+        context.fillStyle = "#A0A0A0";
         context.fillRect(0,0, canvas.width, canvas.height);
         for(let i = 0; i < boxes.length; i++){
             boxes[i].draw();
